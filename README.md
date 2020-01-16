@@ -1,16 +1,22 @@
 # French sentiment analysis with BERT
-> Comparing TF-IDF, fastText and BERT for french sentiment analysis.
+> **How good is BERT ?** Comparing BERT to other SOTA approaches on a **French sentiment analysis** dataset. :books:
 
-[![Build Status][travis-image]][travis-url]
+The contribution of this repository is threefold.
 
-Comparing TF-IDF, fastText and BERT for french sentiment analysis.
-Dataset scraped from [http://www.allocine.fr/](Allociné.fr) user reviews.
+- Firstly, I introduce a new dataset for sentiment analysis, scraped from [Allociné.fr](http://www.allocine.fr/) user reviews.
+At my knowledge, there is no dataset of this size in French available on the internet.
+
+- Secondly, I share my code for French sentiment analysis with BERT, based on [CamemBERT](https://camembert-model.fr/).
+
+- Lastly, I compare BERT results with other SOTA approaches, such as TF-IDF and fastText.
 
 ## Installation
 
 Linux:
 
 ```sh
+git clone https://github.com/TheophileBlard/french-sentiment-analysis-with-bert/
+cd french-sentiment-analysis-with-bert
 pipenv install
 ```
 
@@ -21,11 +27,8 @@ pipenv install
 
 ## Author
 
-Théophile Blard – theophile.blard@gmail.com
+Théophile Blard – :email: theophile.blard@gmail.com
 
-[https://github.com/TheophileBlard](https://github.com/TheophileBlard)
+If you use this work (code or dataset), please cite as:
 
-<!-- Markdown link & img dfn's -->
-[travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
-[travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
-
+> Théophile Blard, French sentiment analysis with BERT, (2020), GitHub repository, https://github.com/TheophileBlard/french-sentiment-analysis-with-bert

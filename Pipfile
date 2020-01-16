@@ -9,6 +9,7 @@ verify_ssl = true
 jupyter = "*"
 requests = "*"
 beautifulsoup4 = "*"
+dateparser = "*"
 
 [requires]
 python_version = "3.7"
