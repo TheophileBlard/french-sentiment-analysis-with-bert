@@ -5,6 +5,7 @@ verify_ssl = true
 
 [dev-packages]
 flake8 = "*"
+pylint = "*"
 
 [packages]
 jupyter = "*"
@@ -12,8 +13,9 @@ requests = "*"
 beautifulsoup4 = "*"
 dateparser = "*"
 pandas = "*"
-pylint = "*"
 etaprogress = "*"
+matplotlib = "*"
+seaborn = "*"
 
 [requires]
 python_version = "3.7"
