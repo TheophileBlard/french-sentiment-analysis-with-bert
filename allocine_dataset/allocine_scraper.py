@@ -111,7 +111,7 @@ def parse_film_page(page_url):
     return ratings, reviews, dates, helpfuls
 
 
-def parse_film(film_url):
+def parse_film(film_url, max_reviews=None):
     ratings, reviews, dates, helpfuls = [], [], [], []
     r = requests.get(film_url)
     if r.status_code == requests.codes.not_found:
@@ -151,14 +151,14 @@ def parse_film(film_url):
         dates.extend(p_dates)
         helpfuls.extend(p_helpfuls)
 
-    if not (len(ratings) == len(reviews) == len(dates) == len(helpfuls)):
-        print("Parsing error. Skipping: {}".format(film_url))
-        return [], [], [], []
+        if max_reviews and len(ratings) > max_reviews:
+            return (ratings[:max_reviews], reviews[:max_reviews],
+                    dates[:max_reviews], helpfuls[:max_reviews])
 
     return (ratings, reviews, dates, helpfuls)
 
 
-def get_film_reviews(root_url, urls):
+def get_film_reviews(root_url, urls, max_reviews_per_film=None):
 
     allocine_dic = defaultdict(list)
     bar = ProgressBar(len(urls), max_width=40)
@@ -175,10 +175,15 @@ def get_film_reviews(root_url, urls):
             film_id=film_id
         )
 
-        parse_output = parse_film(film_url)
+        parse_output = parse_film(film_url, max_reviews_per_film)
 
         if parse_output:
             ratings, reviews, dates, helpfuls = parse_output
+
+            if not(len(ratings) == len(reviews) == len(dates) ==
+                   len(helpfuls)):
+                print("Error: film-url: " + film_url)
+                continue
 
             allocine_dic['film-url'].extend(len(ratings)*[film_url])
             allocine_dic['rating'].extend(ratings)
@@ -188,25 +193,3 @@ def get_film_reviews(root_url, urls):
             allocine_dic['unhelpful'].extend([h[1] for h in helpfuls])
 
     return allocine_dic
-
-"""
-parser = argparse.ArgumentParser()
-parser.add_argument('--root-url', type=str, default=ROOT_URL)
-parser.add_argument('--output', type=str, default=DEFAULT_OUTPUT_PATH)
-parser.add_argument('--start-id', type=int, default=1)
-parser.add_argument('--end-id', type=int, required=True)
-args = parser.parse_args()
-
-if __name__ == '__main__':
-    out_file = "allocine_{}_{}.pickle".format(args.start_id, args.end_id)
-    out_path = os.path.join(args.output, out_file)
-
-
-
-    allocine_dic = parse_allocine(args.root_url, args.start_id, args.end_id)
-
-    # Create a pandas DataFrame and save it to disk as a picle file
-    df = pd.DataFrame.from_dict(allocine_dic)
-    df.to_pickle(out_path)
-
-"""

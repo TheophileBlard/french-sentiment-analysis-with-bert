@@ -1,5 +1,5 @@
 # French sentiment analysis with BERT
-> **How good is BERT ?** Comparing BERT to other SOTA approaches on a **French sentiment analysis** dataset. :books:
+> **How good is BERT ?** Comparing BERT to other SOTA approaches on a **French sentiment analysis** dataset :books:
 
 The contribution of this repository is threefold.
 
