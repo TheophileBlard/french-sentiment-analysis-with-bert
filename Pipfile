@@ -16,6 +16,8 @@ pandas = "*"
 etaprogress = "*"
 matplotlib = "*"
 seaborn = "*"
+jsonlines = "*"
+spacy = "*"
 
 [requires]
 python_version = "3.7"
