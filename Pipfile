@@ -18,6 +18,8 @@ matplotlib = "*"
 seaborn = "*"
 jsonlines = "*"
 spacy = "*"
+scikit-learn = "*"
+nltk = "*"
 
 [requires]
 python_version = "3.7"
