@@ -19,6 +19,13 @@ git clone https://github.com/TheophileBlard/french-sentiment-analysis-with-bert/
 cd french-sentiment-analysis-with-bert
 pipenv install
 ```
+## Results
+
+
+| Model                        | Validation Accuracy | Validation F1-Score | Test Accuracy | Test F1-Score |
+| :----------------------------|--------------------:| -------------------:| -------------:|--------------:| 
+| [TF-IDF + logistic regression](https://github.com/TheophileBlard/french-sentiment-analysis-with-bert/blob/master/tf-idf.ipynb) | 0.92 | 0.92 | **0.91** | **0.91** |
+
 
 ## Release History
 
