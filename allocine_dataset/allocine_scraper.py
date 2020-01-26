@@ -101,13 +101,6 @@ def parse_film_page(page_url):
         helpful = [helpful_dic["helpfulCount"], helpful_dic["unhelpfulCount"]]  # [21, 0]
         helpfuls.append(helpful)
 
-    # print(page_url)
-    # print(ratings)
-    # print(reviews)
-    # print(dates)
-    # print(helpfuls)
-    # assert(len(ratings) == len(reviews) == len(dates) == len(helpfuls))
-
     return ratings, reviews, dates, helpfuls
 
 
@@ -163,8 +156,8 @@ def get_film_reviews(root_url, urls, max_reviews_per_film=None):
     allocine_dic = defaultdict(list)
     bar = ProgressBar(len(urls), max_width=40)
 
-    # Log progress
     for i, url in enumerate(urls):
+        # Log progress
         bar.numerator = i + 1
         print(bar, end='\r')
         sys.stdout.flush()
@@ -180,6 +173,7 @@ def get_film_reviews(root_url, urls, max_reviews_per_film=None):
         if parse_output:
             ratings, reviews, dates, helpfuls = parse_output
 
+            # Rarely happens
             if not(len(ratings) == len(reviews) == len(dates) ==
                    len(helpfuls)):
                 print("Error: film-url: " + film_url)
