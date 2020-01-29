@@ -18,13 +18,16 @@ Linux:
 git clone https://github.com/TheophileBlard/french-sentiment-analysis-with-bert/
 cd french-sentiment-analysis-with-bert
 pipenv install
+
+cd allocine_dataset
+tar xvjf data.tar.bz2
 ```
 ## Results
 
 
-| Model                        | Validation Accuracy | Validation F1-Score | Test Accuracy | Test F1-Score |
-| :----------------------------|--------------------:| -------------------:| -------------:|--------------:| 
-| [TF-IDF + logistic regression](https://github.com/TheophileBlard/french-sentiment-analysis-with-bert/blob/master/tf-idf.ipynb) | 0.92 | 0.92 | **0.91** | **0.91** |
+| Model                                        | Validation Accuracy | Validation F1-Score | Test Accuracy | Test F1-Score |
+| :--------------------------------------------|--------------------:| -------------------:| -------------:|--------------:| 
+| [TF-IDF + logistic regression][tf-idf.ipynb] |                0.92 |                0.92 |      **0.92** |      **0.92** |
 
 
 ## Release History
@@ -39,3 +42,7 @@ Théophile Blard – :email: theophile.blard@gmail.com
 If you use this work (code or dataset), please cite as:
 
 > Théophile Blard, French sentiment analysis with BERT, (2020), GitHub repository, https://github.com/TheophileBlard/french-sentiment-analysis-with-bert
+
+<!-- Markdown link & img dfn's -->
+[tf-idf.ipynb]: https://github.com/TheophileBlard/french-sentiment-analysis-with-bert/blob/master/tf-idf.ipynb
+

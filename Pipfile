@@ -19,6 +19,8 @@ seaborn = "*"
 jsonlines = "*"
 scikit-learn = "*"
 nltk = "*"
+tensorflow = "==2.1.0"
+keras-tuner = "*"
 
 [requires]
 python_version = "3.7"
