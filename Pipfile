@@ -21,6 +21,7 @@ scikit-learn = "*"
 nltk = "*"
 tensorflow = "==2.1.0"
 keras-tuner = "*"
+transformers = "*"
 
 [requires]
 python_version = "3.7"
