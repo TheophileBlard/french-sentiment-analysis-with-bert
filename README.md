@@ -4,9 +4,10 @@
 The contribution of this repository is threefold.
 
 - Firstly, I introduce a new dataset for sentiment analysis, scraped from [Allociné.fr](http://www.allocine.fr/) user reviews.
-At my knowledge, there is no dataset of this size in French available on the internet.
+It contains 100k positive and 100k negative reviews divided into 3 balanced splits: train (160k reviews), val (20k) and test (20k).
+At my knowledge, there is no dataset of this size in French language available on the internet.
 
-- Secondly, I share my code for French sentiment analysis with BERT, based on [CamemBERT](https://camembert-model.fr/).
+- Secondly, I share my code for French sentiment analysis with BERT, based on [CamemBERT](https://camembert-model.fr/), and the [🤗Transformers](https://github.com/huggingface/transformers) library.
 
 - Lastly, I compare BERT results with other SOTA approaches, such as *TF-IDF* and *fastText*, as well as other non-contextual word embeddings based methods.
 
@@ -22,14 +23,15 @@ pipenv install
 cd allocine_dataset
 tar xvjf data.tar.bz2
 ```
-## Results
 
+## Results
 
 | Model                                        | Validation Accuracy | Validation F1-Score | Test Accuracy | Test F1-Score |
 | :--------------------------------------------|--------------------:| -------------------:| -------------:|--------------:| 
 | [TF-IDF + logistic regression][tf-idf.ipynb] |                0.92 |                0.92 |      **0.92** |      **0.92** |
 | [fastText][word-vectors.ipynb]               |                0.92 |                0.92 |          0.91 |          0.91 |
 | [1D CNN][word-vectors.ipynb]                 |                0.91 |                0.90 |          0.91 |          0.91 |
+
 
 ## Release History
 
