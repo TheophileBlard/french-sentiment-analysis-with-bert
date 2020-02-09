@@ -28,10 +28,7 @@ tar xvjf data.tar.bz2
 
 | Model                                        | Validation Accuracy | Validation F1-Score | Test Accuracy | Test F1-Score |
 | :--------------------------------------------|--------------------:| -------------------:| -------------:|--------------:| 
-| [TF-IDF + logistic regression][tf-idf.ipynb] |                0.92 |                0.92 |      **0.92** |      **0.92** |
-| [fastText][word-vectors.ipynb]               |                0.92 |                0.92 |          0.91 |          0.91 |
-| [1D CNN][word-vectors.ipynb]                 |                0.91 |                0.90 |          0.91 |          0.91 |
-
+| [TF-IDF + logistic regression][tf-idf.ipynb] |               94.35 |               94.29 |     **94.38** |     **94.19** |
 
 ## Release History
 
