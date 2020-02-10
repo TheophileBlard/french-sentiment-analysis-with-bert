@@ -1,9 +1,7 @@
-import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
-
-from sklearn import metrics
-import tensorflow as tf
+import pandas as pd
+import seaborn as sns
 
 # Seaborn options
 sns.set(style="whitegrid", font_scale=1.4)
@@ -29,30 +27,22 @@ def plot_training_curves(history, figsize=(12, 5)):
     return fig
 
 
-def accuracy_vs_train_size(model, initial_weights, X_train, y_train,
-                           X_val, y_val, X_test, y_test, sizes):
-    test_accuracies = []
-    for size in sizes:
-        # Defines early stopper
-        early_stopper = tf.keras.callbacks.EarlyStopping(
-            monitor='val_loss', mode='auto', patience=2,
-            verbose=1, restore_best_weights=True
-        )
-        # Reset weights to initial value
-        model.set_weights(initial_weights)
+def print_confusion_matrix(confusion_matrix, class_names, figsize=(10, 7), fontsize=14):
+    df_cm = pd.DataFrame(
+        confusion_matrix, index=class_names, columns=class_names,
+    )
+    fig = plt.figure(figsize=figsize)
 
-        # Train model on data subset
-        model.fit(
-            X_train[:size], y_train[:size],
-            validation_data=(X_val, y_val),
-            epochs=30, batch_size=32,
-            callbacks=[early_stopper], verbose=2
-        )
+    heatmap = sns.heatmap(df_cm, annot=True, fmt="d", cmap="YlGnBu")
+    heatmap.yaxis.set_ticklabels(
+        heatmap.yaxis.get_ticklabels(), rotation=0,
+        ha='right', fontsize=fontsize
+    )
+    heatmap.xaxis.set_ticklabels(
+        heatmap.xaxis.get_ticklabels(), rotation=45,
+        ha='right', fontsize=fontsize
+    )
 
-        # Evaluate on test set
-        probas = model.predict(X_test)
-        y_pred = (probas > 0.5).astype(np.int)
-        test_acc = metrics.accuracy_score(y_test, y_pred)
-        test_accuracies.append(test_acc)
-
-    return test_accuracies
+    plt.ylabel('True label')
+    plt.xlabel('Predicted label')
+    return fig
