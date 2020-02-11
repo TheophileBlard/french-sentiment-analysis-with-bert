@@ -12,6 +12,10 @@ At my knowledge, there is no dataset of this size in French language available o
 
 - Lastly, I compare BERT results with other SOTA approaches, such as *TF-IDF* and *fastText*, as well as other non-contextual word embeddings based methods.
 
+
+| :warning: This repository is still a WIP, which means that the results are added as things progress. Because it's in active development, the dataset and the models are not yet fixed and may change. |
+| :--------------------------------------------|
+
 ## Installation
 
 Linux:
