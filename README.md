@@ -50,12 +50,6 @@ tar xvjf data.tar.bz2
 - 0.0.1
   - Work in progress
 
-- [x] TF-IDF results
-- [x] RNN results
-- [x] CNN results
-- [ ] fastText results
-- [ ] BERT results
-
 ## Author
 
 Théophile Blard – :email: theophile.blard@gmail.com
