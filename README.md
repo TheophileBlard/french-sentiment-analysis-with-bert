@@ -35,9 +35,9 @@ tar xvjf data.tar.bz2
 | Model                                        | Validation Accuracy | Validation F1-Score | Test Accuracy | Test F1-Score |
 | :--------------------------------------------|--------------------:| -------------------:| -------------:|--------------:|
 | [RNN][word-vectors.ipynb]                    |               94.39 |               94.34 |     **94.58** |     **94.39** |
-| [TF-IDF + logistic regression][tf-idf.ipynb] |               94.35 |               94.29 |         94.38 |         94.19 |
+| [TF-IDF + LogReg][tf-idf.ipynb]              |               94.35 |               94.29 |         94.38 |         94.19 |
 | [CNN][word-vectors.ipynb]                    |               93.69 |               93.72 |         94.10 |         93.98 |
-| [fastText][word-vectors.ipynb]               |               92.88 |               92.75 |         92.90 |         92.57 |
+| [fastText (unigrams)][word-vectors.ipynb]    |               92.88 |               92.75 |         92.90 |         92.57 |
 
 ### Accuracy vs Training data
 
