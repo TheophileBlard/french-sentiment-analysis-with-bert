@@ -34,7 +34,8 @@ tar xvjf data.tar.bz2
 
 | Model                                        | Validation Accuracy | Validation F1-Score | Test Accuracy | Test F1-Score |
 | :--------------------------------------------|--------------------:| -------------------:| -------------:|--------------:|
-| [RNN][word-vectors.ipynb]                    |               94.39 |               94.34 |     **94.58** |     **94.39** |
+| [CamemBERT][bert.ipynb]                      |           **97.39** |           **97.36** |     **97.44** |     **97.34** |
+| [RNN][word-vectors.ipynb]                    |               94.39 |               94.34 |         94.58 |         94.39 |
 | [TF-IDF + LogReg][tf-idf.ipynb]              |               94.35 |               94.29 |         94.38 |         94.19 |
 | [CNN][word-vectors.ipynb]                    |               93.69 |               93.72 |         94.10 |         93.98 |
 | [fastText (unigrams)][word-vectors.ipynb]    |               92.88 |               92.75 |         92.90 |         92.57 |
@@ -61,3 +62,4 @@ If you use this work (code or dataset), please cite as:
 <!-- Markdown link & img dfn's -->
 [tf-idf.ipynb]: https://github.com/TheophileBlard/french-sentiment-analysis-with-bert/blob/master/tf-idf.ipynb
 [word-vectors.ipynb]: https://github.com/TheophileBlard/french-sentiment-analysis-with-bert/blob/master/word-vectors.ipynb
+[bert.ipynb]: https://github.com/TheophileBlard/french-sentiment-analysis-with-bert/blob/master/bert.ipynb
