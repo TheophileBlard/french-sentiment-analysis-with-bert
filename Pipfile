@@ -6,6 +6,7 @@ verify_ssl = true
 [dev-packages]
 flake8 = "*"
 pylint = "*"
+bleach = ">=3.1.1"
 
 [packages]
 jupyter = "*"
@@ -18,9 +19,7 @@ matplotlib = "*"
 seaborn = "*"
 jsonlines = "*"
 scikit-learn = "*"
-nltk = "*"
 tensorflow = "==2.1.0"
-keras-tuner = "*"
 transformers = "*"
 
 [requires]
