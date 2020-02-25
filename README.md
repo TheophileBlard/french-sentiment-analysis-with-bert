@@ -4,13 +4,13 @@
 
 The contribution of this repository is threefold.
 
-- Firstly, I introduce a **new dataset for sentiment analysis**, scraped from [Allociné.fr](http://www.allocine.fr/) user reviews.
-It contains **100k positive and 100k negative reviews** divided into 3 balanced splits: train (160k reviews), val (20k) and test (20k).
+- Firstly, I introduce a new dataset for sentiment analysis, scraped from [Allociné.fr](http://www.allocine.fr/) user reviews.
+It contains 100k positive and 100k negative reviews divided into 3 balanced splits: train (160k reviews), val (20k) and test (20k).
 At my knowledge, there is no dataset of this size in French language available on the internet.
 
-- Secondly, I share my code for **French sentiment analysis with BERT**, based on [CamemBERT](https://camembert-model.fr/), and the [🤗Transformers](https://github.com/huggingface/transformers) library.
+- Secondly, I share my code for French sentiment analysis with BERT, based on [CamemBERT](https://camembert-model.fr/), and the [🤗Transformers](https://github.com/huggingface/transformers) library.
 
-- Lastly, I compare BERT results with other SOTA approaches, such as **TF-IDF** and **fastText**, as well as other **non-contextual word embeddings based methods**.
+- Lastly, I compare BERT results with other SOTA approaches, such as *TF-IDF* and *fastText*, as well as other *non-contextual word embeddings based methods*.
 
 ## Installation
 
@@ -68,7 +68,7 @@ For more information, please refer to the [dedicated page][allocine-readme].
 
 - [x] *Dataset available*
 - [x] *Models available*
-- [x] *Results on full datset*
+- [x] *Results on full dataset*
 - [x] *Learning curves*
 - [ ] *Inference time*
 - [ ] *Generalizability*
