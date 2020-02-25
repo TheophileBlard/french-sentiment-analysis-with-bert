@@ -10,7 +10,7 @@ At my knowledge, there is no dataset of this size in French language available o
 
 - Secondly, I share my code for French sentiment analysis with BERT, based on [CamemBERT](https://camembert-model.fr/), and the [🤗Transformers](https://github.com/huggingface/transformers) library.
 
-- Lastly, I compare BERT results with other SOTA approaches, such as *TF-IDF* and *fastText*, as well as other *non-contextual word embeddings based methods*.
+- Lastly, I compare BERT results with other SOTA approaches, such as *TF-IDF* and *fastText*, as well as other non-contextual word embeddings based methods.
 
 ## Installation
 
@@ -44,7 +44,7 @@ For more information, please refer to the [dedicated page][allocine-readme].
 
 | Model                                        | Validation Accuracy | Validation F1-Score | Test Accuracy | Test F1-Score |
 | :--------------------------------------------|--------------------:| -------------------:| -------------:|--------------:|
-| **[CamemBERT][bert.ipynb]**                     |           **97.39** |           **97.36** |     **97.44** |     **97.34** |
+| **[CamemBERT][bert.ipynb]**                  |           **97.39** |           **97.36** |     **97.44** |     **97.34** |
 | [RNN][word-vectors.ipynb]                    |               94.39 |               94.34 |         94.58 |         94.39 |
 | [TF-IDF + LogReg][tf-idf.ipynb]              |               94.35 |               94.29 |         94.38 |         94.19 |
 | [CNN][word-vectors.ipynb]                    |               93.69 |               93.72 |         94.10 |         93.98 |
@@ -52,8 +52,18 @@ For more information, please refer to the [dedicated page][allocine-readme].
 
 ### Learning curves
 
+Test accuracy as a function of training dataset size.
+
 <p align="center">
-    <img src="/img/results.png" width="750" >
+    <img src="/img/learning_curves.png" width="750" >
+</p>
+
+### Inference time
+
+Time taken by a model to perform a single prediction (averaged on 1000 predictions).
+
+<p align="center">
+    <img src="/img/inference_time.png" width="750" >
 </p>
 
 ## Release History
@@ -70,8 +80,9 @@ For more information, please refer to the [dedicated page][allocine-readme].
 - [x] *Models available*
 - [x] *Results on full dataset*
 - [x] *Learning curves*
-- [ ] *Inference time*
+- [x] *Inference time*
 - [ ] *Generalizability*
+- [ ] *Online demo*
 - [ ] *Predicting usefulness*
 
 ## Author
@@ -83,7 +94,7 @@ If you use this work (code or dataset), please cite as:
 > Théophile Blard, French sentiment analysis with BERT, (2020), GitHub repository, <https://github.com/TheophileBlard/french-sentiment-analysis-with-bert>
 
 <!-- Markdown link & img dfn's -->
-[tf-idf.ipynb]: https://github.com/TheophileBlard/french-sentiment-analysis-with-bert/blob/master/tf-idf.ipynb
-[word-vectors.ipynb]: https://github.com/TheophileBlard/french-sentiment-analysis-with-bert/blob/master/word-vectors.ipynb
-[bert.ipynb]: https://github.com/TheophileBlard/french-sentiment-analysis-with-bert/blob/master/bert.ipynb
+[tf-idf.ipynb]: https://github.com/TheophileBlard/french-sentiment-analysis-with-bert/blob/master/01_tf-idf.ipynb
+[word-vectors.ipynb]: https://github.com/TheophileBlard/french-sentiment-analysis-with-bert/blob/master/02_word-vectors.ipynb
+[bert.ipynb]: https://github.com/TheophileBlard/french-sentiment-analysis-with-bert/blob/master/03_bert.ipynb
 [allocine-readme]: https://github.com/TheophileBlard/french-sentiment-analysis-with-bert/blob/master/allocine_dataset/
