@@ -28,7 +28,7 @@ tar xvjf data.tar.bz2
 ## Dataset
 
 The dataset is made available as [`.jsonl`](http://jsonlines.org/) files, as well as a [`.pickle`](https://docs.python.org/3/library/pickle.html) file.
-Some examples from the training set are presented in the following table.
+Some examples from the training set are presented in the following table:
 
 | Review                                                                              |  Polarity  |
 | :---------------------------------------------                                      |----------|
@@ -50,6 +50,8 @@ For more information, please refer to the [dedicated page][allocine-readme].
 | [CNN][word-vectors.ipynb]                    |               93.69 |               93.72 |         94.10 |         93.98 |
 | [fastText (unigrams)][word-vectors.ipynb]    |               92.88 |               92.75 |         92.90 |         92.57 |
 
+> CamemBERT outperforms all other models by a large margin.
+
 ### Learning curves
 
 Test accuracy as a function of training dataset size.
@@ -57,6 +59,12 @@ Test accuracy as a function of training dataset size.
 <p align="center">
     <img src="/img/learning_curves.png" width="750" >
 </p>
+
+> With only 500 training examples, CamemBERT is already showing better results that any other model trained on the full dataset.
+> This is the power of modern language models and self-supervised pre-training.
+
+> For this kind of tasks, RNNs needs a lot of data (>100k) to perform well.
+> The same result (for English language) is empirically demonstrated by Alec Radford in [these slides](https://docs.google.com/presentation/d/102TFe5dAmUXja_Ft31z__NUUuY7PZG9AkV7Qn_TwPXg/edit#slide=id.g58433b516_80).
 
 ### Inference time
 
@@ -66,10 +74,40 @@ Time taken by a model to perform a single prediction (averaged on 1000 predictio
     <img src="/img/inference_time.png" width="750" >
 </p>
 
+> As one would expect, the slowest model is *CamemBERT*, followed by *TF-IDF*.
+
+> On the other hand, *fastText* performs the ... fastest, but is actually slow compared to the [original implementation](https://github.com/facebookresearch/fastText), because of the overhead of Python and Keras.
+
+### Generalizability
+
+I considered the text classification task from [FLUE](https://github.com/getalp/Flaubert/tree/master/flue) (French Language Understanding Evaluation) to evaluate the cross-domain generalization capabilities of the models. This is also a binary classification task, but on [Amazon](https://www.amazon.fr/) product reviews.
+
+There is one train and test set for each product category (*books*, *DVD* and *music*).
+The train and test sets are balanced, including around 1000 positive and 1000 negative reviews, for a total of 2000 reviews in each dataset.
+Each sample contains a review text and the associated rating from 1 to 5 stars.
+Positive reviews have ratings higher than 3 and negative reviews are those rated lower than 3. Reviews with a rating of 3 stars are removed.
+
+I didn't do any additional training, only inference on the test sets.
+The resulting accuracies are reported in the following table:
+
+| Model                                        | Books               | DVD                 |         Music |
+| :--------------------------------------------|:-------------------:|:-------------------:|:-------------:|
+| **[CamemBERT][bert.ipynb]**                  |           **94.10** |           **93.25** |     **94.55** |
+| [TF-IDF + LogReg][tf-idf.ipynb]              |               87.10 |               88.10 |         87.45 |
+| [CNN][word-vectors.ipynb]                    |               85.80 |               88.75 |         87.25 |
+| [RNN][word-vectors.ipynb]                    |               85.30 |               87.55 |         87.50 |
+| [fastText (unigrams)][word-vectors.ipynb]    |               85.25 |               87.10 |         86.65 |
+
+> Without additional training on domain-specific data, the *CamemBERT* model outperforms finetuned *CamemBERT* & *FlauBERT* models reported in [(He et al., 2020)](https://arxiv.org/abs/1912.05372).
+
+> *TF-IDF + LogReg* also performs better than specifically-trained *mBERT* [(Eisenschlos et al., 2019)](https://arxiv.org/abs/1909.04761).
+
 ## Release History
 
+- 0.2.0
+  - Added inference time + generalizability
 - 0.1.0
-  - The first proper release
+  - First proper release
   - Learning curves & results for all models
 - 0.0.1
   - Work in progress
@@ -81,7 +119,7 @@ Time taken by a model to perform a single prediction (averaged on 1000 predictio
 - [x] *Results on full dataset*
 - [x] *Learning curves*
 - [x] *Inference time*
-- [ ] *Generalizability*
+- [x] *Generalizability*
 - [ ] *Online demo*
 - [ ] *Predicting usefulness*
 
