@@ -1,6 +1,6 @@
 # French sentiment analysis with BERT
 
-> **How good is BERT ?** Comparing BERT to other SOTA approaches on a large-scale **French sentiment analysis** dataset :books:
+> **How good is BERT ?** Comparing BERT to other state-of-the-art approaches on a large-scale **French sentiment analysis** dataset :books:
 
 The contribution of this repository is threefold.
 
@@ -10,7 +10,7 @@ At my knowledge, there is no dataset of this size in French language available o
 
 - Secondly, I share my code for French sentiment analysis with BERT, based on [CamemBERT](https://camembert-model.fr/), and the [🤗Transformers](https://github.com/huggingface/transformers) library.
 
-- Lastly, I compare BERT results with other SOTA approaches, such as *TF-IDF* and *fastText*, as well as other non-contextual word embeddings based methods.
+- Lastly, I compare BERT results with other state-of-the-art approaches, such as *TF-IDF* and *fastText*, as well as other non-contextual word embeddings based methods.
 
 ## Installation
 
@@ -63,15 +63,15 @@ Test accuracy as a function of training dataset size.
 > With only 500 training examples, CamemBERT is already showing better results that any other model trained on the full dataset.
 > This is the power of modern language models and self-supervised pre-training.
 
-> For this kind of tasks, RNNs needs a lot of data (>100k) to perform well.
-> The same result (for English language) is empirically demonstrated by Alec Radford in [these slides](https://docs.google.com/presentation/d/102TFe5dAmUXja_Ft31z__NUUuY7PZG9AkV7Qn_TwPXg/edit#slide=id.g58433b516_80).
+> For this kind of tasks, RNNs need a lot of data (>100k) to perform well.
+> The same result (for English language) is empirically observed by Alec Radford in [these slides](https://docs.google.com/presentation/d/102TFe5dAmUXja_Ft31z__NUUuY7PZG9AkV7Qn_TwPXg/edit#slide=id.g58433b516_80).
 
 ### Inference time
 
 Time taken by a model to perform a single prediction (averaged on 1000 predictions).
 
 <p align="center">
-    <img src="/img/inference_time.png" width="750" >
+    <img src="/img/inference_time.png" width="550" >
 </p>
 
 > As one would expect, the slowest model is *CamemBERT*, followed by *TF-IDF*.
@@ -84,8 +84,6 @@ I considered the text classification task from [FLUE](https://github.com/getalp/
 
 There is one train and test set for each product category (*books*, *DVD* and *music*).
 The train and test sets are balanced, including around 1000 positive and 1000 negative reviews, for a total of 2000 reviews in each dataset.
-Each sample contains a review text and the associated rating from 1 to 5 stars.
-Positive reviews have ratings higher than 3 and negative reviews are those rated lower than 3. Reviews with a rating of 3 stars are removed.
 
 I didn't do any additional training, only inference on the test sets.
 The resulting accuracies are reported in the following table:
