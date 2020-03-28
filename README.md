@@ -100,8 +100,21 @@ The resulting accuracies are reported in the following table:
 
 > *TF-IDF + LogReg* also performs better than specifically-trained *mBERT* [(Eisenschlos et al., 2019)](https://arxiv.org/abs/1909.04761).
 
+## Online Demo
+
+Open the online demo on Google Colab: 
+
+<p>
+<p align="center">
+    <a href="https://colab.research.google.com/github/TheophileBlard/french-sentiment-analysis-with-bert/blob/master/colab/french_sentiment_analysis_with_bert.ipynb">
+        <img alt="Colab Demo" src="https://colab.research.google.com/assets/colab-badge.svg">
+    </a>    
+</p>
+
 ## Release History
 
+- 0.3.0
+  - Added Google Colab online demo
 - 0.2.0
   - Added inference time + generalizability
 - 0.1.0
@@ -118,7 +131,7 @@ The resulting accuracies are reported in the following table:
 - [x] *Learning curves*
 - [x] *Inference time*
 - [x] *Generalizability*
-- [ ] *Online demo*
+- [x] *Online demo*
 - [ ] *Predicting usefulness*
 
 ## Author
