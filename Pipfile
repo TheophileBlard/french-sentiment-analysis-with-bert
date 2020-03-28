@@ -6,7 +6,7 @@ verify_ssl = true
 [dev-packages]
 flake8 = "*"
 pylint = "*"
-bleach = ">=3.1.1"
+bleach = ">=3.1.2"
 
 [packages]
 jupyter = "*"
