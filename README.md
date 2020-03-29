@@ -96,7 +96,7 @@ The resulting accuracies are reported in the following table:
 | [RNN][word-vectors.ipynb]                    |               85.30 |               87.55 |         87.50 |
 | [fastText (unigrams)][word-vectors.ipynb]    |               85.25 |               87.10 |         86.65 |
 
-> Without additional training on domain-specific data, the *CamemBERT* model outperforms finetuned *CamemBERT* & *FlauBERT* models reported in [(He et al., 2020)](https://arxiv.org/abs/1912.05372).
+> Without additional training on domain-specific data, the *CamemBERT* model outperforms finetuned *CamemBERT* & *FlauBERT* models reported in [(He et al., 2020)](https://arxiv.org/abs/1912.05372). **Update:** FlauBERT (Large) released 03/20 gets better results, but it is excessively heavy. 
 
 > *TF-IDF + LogReg* also performs better than specifically-trained *mBERT* [(Eisenschlos et al., 2019)](https://arxiv.org/abs/1909.04761).
 
