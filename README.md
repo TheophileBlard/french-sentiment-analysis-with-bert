@@ -33,6 +33,7 @@ jupyter notebook 03_bert.ipynb
 But if you only need the model for inference, the following code should do the trick:
 
 ```python
+from transformers import AutoTokenizer, TFAutoModelForSequenceClassification
 from transformers import pipeline
 
 tokenizer = AutoTokenizer.from_pretrained("tblard/tf-allocine")
