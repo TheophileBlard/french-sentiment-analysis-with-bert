@@ -14,15 +14,35 @@ At my knowledge, there is no dataset of this size in French language available o
 
 ## Installation
 
-Linux:
+If you want to experiment with the training code, follow these steps:
 
 ```sh
+# Download repo and its dependencies 
 git clone https://github.com/TheophileBlard/french-sentiment-analysis-with-bert/
 cd french-sentiment-analysis-with-bert
 pipenv install
 
-cd allocine_dataset
-tar xvjf data.tar.bz2
+# Extract dataset
+cd allocine_dataset && tar xvjf data.tar.bz2 && cd ..
+
+# Activate virtualenv and open-up BERT notebook
+pipenv shell
+jupyter notebook 03_bert.ipynb 
+```
+
+But if you only need the model for inference, the following code should do the trick:
+
+```python
+from transformers import pipeline
+
+tokenizer = AutoTokenizer.from_pretrained("tblard/tf-allocine")
+model = TFAutoModelForSequenceClassification.from_pretrained("tblard/tf-allocine")
+nlp = pipeline('sentiment-analysis', model=model, tokenizer=tokenizer)
+
+print(nlp("Alad'2 est clairement le meilleur film de l'année 2018.")) # POSITIVE
+print(nlp("Juste whoaaahouuu !")) # POSITIVE
+print(nlp("NUL...A...CHIER ! FIN DE TRANSMISSION.")) # NEGATIVE
+print(nlp("Je m'attendais à mieux de la part de Franck Dubosc !")) # NEGATIVE
 ```
 
 ## Dataset
@@ -113,6 +133,8 @@ Open the online demo on Google Colab:
 
 ## Release History
 
+- 0.4.0
+  - Uploaded model to <https://huggingface.co/models>
 - 0.3.0
   - Added Google Colab online demo
 - 0.2.0
