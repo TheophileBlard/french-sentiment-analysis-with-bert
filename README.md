@@ -12,7 +12,7 @@ At my knowledge, there is no dataset of this size in French language available o
 
 - Lastly, I compare BERT results with other state-of-the-art approaches, such as *TF-IDF* and *fastText*, as well as other non-contextual word embeddings based methods.
 
-## Installation
+## Usage
 
 If you want to experiment with the training code, follow these steps:
 
