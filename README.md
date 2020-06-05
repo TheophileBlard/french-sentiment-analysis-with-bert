@@ -12,7 +12,7 @@ At my knowledge, there is no dataset of this size in French language available o
 
 - Lastly, I compare BERT results with other state-of-the-art approaches, such as *TF-IDF* and *fastText*, as well as other non-contextual word embeddings based methods.
 
-## Usage
+## Installation
 
 If you want to experiment with the training code, follow these steps:
 
@@ -30,21 +30,7 @@ pipenv shell
 jupyter notebook 03_bert.ipynb 
 ```
 
-But if you only need the model for inference, the following code should do the trick:
-
-```python
-from transformers import AutoTokenizer, TFAutoModelForSequenceClassification
-from transformers import pipeline
-
-tokenizer = AutoTokenizer.from_pretrained("tblard/tf-allocine")
-model = TFAutoModelForSequenceClassification.from_pretrained("tblard/tf-allocine")
-nlp = pipeline('sentiment-analysis', model=model, tokenizer=tokenizer)
-
-print(nlp("Alad'2 est clairement le meilleur film de l'année 2018.")) # POSITIVE
-print(nlp("Juste whoaaahouuu !")) # POSITIVE
-print(nlp("NUL...A...CHIER ! FIN DE TRANSMISSION.")) # NEGATIVE
-print(nlp("Je m'attendais à mieux de la part de Franck Dubosc !")) # NEGATIVE
-```
+But if you only need the model for inference, please refer to [this paragraph](#hugging-face-integration).
 
 ## Dataset
 
@@ -120,6 +106,27 @@ The resulting accuracies are reported in the following table:
 > Without additional training on domain-specific data, the *CamemBERT* model outperforms finetuned *CamemBERT* & *FlauBERT* models reported in [(He et al., 2020)](https://arxiv.org/abs/1912.05372). **Update:** FlauBERT (Large) released 03/20 gets better results, but it is excessively heavy. 
 
 > *TF-IDF + LogReg* also performs better than specifically-trained *mBERT* [(Eisenschlos et al., 2019)](https://arxiv.org/abs/1909.04761).
+
+## Hugging Face Integration
+
+The BERT model is now part of the [🤗Transformers](https://github.com/huggingface/transformers) library !
+You can retrieve it and perform inference with the following code:
+
+```python
+from transformers import AutoTokenizer, TFAutoModelForSequenceClassification
+from transformers import pipeline
+
+tokenizer = AutoTokenizer.from_pretrained("tblard/tf-allocine")
+model = TFAutoModelForSequenceClassification.from_pretrained("tblard/tf-allocine")
+nlp = pipeline('sentiment-analysis', model=model, tokenizer=tokenizer)
+
+print(nlp("Alad'2 est clairement le meilleur film de l'année 2018.")) # POSITIVE
+print(nlp("Juste whoaaahouuu !")) # POSITIVE
+print(nlp("NUL...A...CHIER ! FIN DE TRANSMISSION.")) # NEGATIVE
+print(nlp("Je m'attendais à mieux de la part de Franck Dubosc !")) # NEGATIVE
+```
+
+Coming soon: [nlp](https://github.com/huggingface/nlp) integration.
 
 ## Online Demo
 
