@@ -45,6 +45,8 @@ Some examples from the training set are presented in the following table:
 
 For more information, please refer to the [dedicated page][allocine-readme].
 
+The dataset is also available in the [🤗nlp library](https://huggingface.co/nlp/viewer), please refer to [this paragraph](#hugging-face-integration).
+
 ## Results
 
 ### Full dataset
