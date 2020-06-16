@@ -109,7 +109,7 @@ The resulting accuracies are reported in the following table:
 
 ## Hugging Face Integration
 
-The BERT model is now part of the [🤗Transformers](https://github.com/huggingface/transformers) library !
+The CamemBERT model is now [part of the 🤗Transformers library](https://huggingface.co/tblard/tf-allocine) !
 You can retrieve it and perform inference with the following code:
 
 ```python
@@ -125,8 +125,17 @@ print(nlp("Juste whoaaahouuu !")) # POSITIVE
 print(nlp("NUL...A...CHIER ! FIN DE TRANSMISSION.")) # NEGATIVE
 print(nlp("Je m'attendais à mieux de la part de Franck Dubosc !")) # NEGATIVE
 ```
+The dataset is also [available in 🤗nlp](https://huggingface.co/nlp/viewer). 
+To download it and start training your own model, simply use:
 
-Coming soon: [nlp](https://github.com/huggingface/nlp) integration.
+```python
+import nlp
+
+train_ds, val_ds, test_ds = nlp.load_dataset(
+    'allocine', 
+    split=['train', 'validation', 'test']
+)
+```
 
 ## Online Demo
 
@@ -143,6 +152,7 @@ Open the online demo on Google Colab:
 
 - 0.4.0
   - Uploaded model to <https://huggingface.co/models>
+  - Uploaded the dataset to <https://huggingface.co/nlp/viewer>
 - 0.3.0
   - Added Google Colab online demo
 - 0.2.0
