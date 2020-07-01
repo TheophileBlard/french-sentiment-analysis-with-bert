@@ -127,7 +127,7 @@ print(nlp("Juste whoaaahouuu !")) # POSITIVE
 print(nlp("NUL...A...CHIER ! FIN DE TRANSMISSION.")) # NEGATIVE
 print(nlp("Je m'attendais à mieux de la part de Franck Dubosc !")) # NEGATIVE
 ```
-The dataset is also [available in 🤗nlp]https://huggingface.co/nlp/viewer/?dataset=allocine). 
+The dataset is also [available in 🤗nlp](https://huggingface.co/nlp/viewer/?dataset=allocine). 
 To download it and start training your own model, simply use:
 
 ```python
