@@ -127,7 +127,7 @@ print(nlp("Juste whoaaahouuu !")) # POSITIVE
 print(nlp("NUL...A...CHIER ! FIN DE TRANSMISSION.")) # NEGATIVE
 print(nlp("Je m'attendais à mieux de la part de Franck Dubosc !")) # NEGATIVE
 ```
-The dataset is also [available in 🤗nlp](https://huggingface.co/nlp/viewer). 
+The dataset is also [available in 🤗nlp]https://huggingface.co/nlp/viewer/?dataset=allocine). 
 To download it and start training your own model, simply use:
 
 ```python
@@ -153,8 +153,8 @@ Open the online demo on Google Colab:
 ## Release History
 
 - 0.4.0
-  - Uploaded model to <https://huggingface.co/models>
-  - Uploaded the dataset to <https://huggingface.co/nlp/viewer>
+  - Uploaded model to <https://huggingface.co/tblard/tf-allocine>
+  - Uploaded the dataset to <https://huggingface.co/nlp/viewer/?dataset=allocine>
 - 0.3.0
   - Added Google Colab online demo
 - 0.2.0
