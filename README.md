@@ -119,12 +119,7 @@ from transformers import AutoTokenizer, TFAutoModelForSequenceClassification
 from transformers import pipeline
 
 tokenizer = AutoTokenizer.from_pretrained("tblard/tf-allocine")
-#model = TFAutoModelForSequenceClassification.from_pretrained("tblard/tf-allocine")
-
-# There is currently a bug with transformers v3.0.0
-# https://github.com/huggingface/transformers/issues/5473
-from transformers import TFCamembertForSequenceClassification
-model = TFCamembertForSequenceClassification.from_pretrained("tblard/tf-allocine")
+model = TFAutoModelForSequenceClassification.from_pretrained("tblard/tf-allocine")
 
 nlp = pipeline('sentiment-analysis', model=model, tokenizer=tokenizer)
 
