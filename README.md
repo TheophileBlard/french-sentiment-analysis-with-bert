@@ -175,6 +175,7 @@ Open the online demo on Google Colab:
 - [x] *Inference time*
 - [x] *Generalizability*
 - [x] *Online demo*
+- [x] *Hugging Face integration*
 - [ ] *Predicting usefulness*
 
 ## Author
