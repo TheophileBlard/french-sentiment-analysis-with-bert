@@ -45,7 +45,7 @@ Some examples from the training set are presented in the following table:
 
 For more information, please refer to the [dedicated page][allocine-readme].
 
-The dataset is also available in the [🤗nlp library](https://huggingface.co/nlp/viewer), please refer to [this paragraph](#hugging-face-integration).
+The dataset is also available in the [🤗Datasets library](https://huggingface.co/datasets), please refer to [this paragraph](#hugging-face-integration).
 
 ## Results
 
@@ -128,13 +128,13 @@ print(nlp("Juste whoaaahouuu !")) # POSITIVE
 print(nlp("NUL...A...CHIER ! FIN DE TRANSMISSION.")) # NEGATIVE
 print(nlp("Je m'attendais à mieux de la part de Franck Dubosc !")) # NEGATIVE
 ```
-The dataset is also [available in 🤗nlp](https://huggingface.co/nlp/viewer/?dataset=allocine). 
+The dataset is also [available in 🤗Datasets](https://huggingface.co/datasets/viewer/?dataset=allocine). 
 To download it and start training your own model, simply use:
 
 ```python
-import nlp
+import datasets
 
-train_ds, val_ds, test_ds = nlp.load_dataset(
+train_ds, val_ds, test_ds = datasets.load_dataset(
     'allocine', 
     split=['train', 'validation', 'test']
 )
@@ -155,7 +155,7 @@ Open the online demo on Google Colab:
 
 - 0.4.0
   - Uploaded model to <https://huggingface.co/tblard/tf-allocine>
-  - Uploaded the dataset to <https://huggingface.co/nlp/viewer/?dataset=allocine>
+  - Uploaded the dataset to <https://huggingface.co/datasets/viewer/?dataset=allocine>
 - 0.3.0
   - Added Google Colab online demo
 - 0.2.0
