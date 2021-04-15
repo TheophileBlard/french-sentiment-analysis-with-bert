@@ -6,10 +6,9 @@ verify_ssl = true
 [dev-packages]
 flake8 = "*"
 pylint = "*"
-bleach = ">=3.1.2"
 
 [packages]
-jupyter = "*"
+notebook = ">=6.3"
 requests = "*"
 beautifulsoup4 = "*"
 dateparser = "*"
@@ -19,8 +18,9 @@ matplotlib = "*"
 seaborn = "*"
 jsonlines = "*"
 scikit-learn = "*"
-tensorflow = "==2.1.0"
-transformers = "*"
+tensorflow = ">=2.4.0"
+transformers = ">=4.5.1"
+sentencepiece = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3.8"
