@@ -23,7 +23,7 @@ cd french-sentiment-analysis-with-bert
 pipenv install
 
 # Extract dataset
-cd allocine_dataset && tar xvjf data.tar.bz2 && cd ..
+pushd allocine_dataset && tar xvjf data.tar.bz2 && popd
 
 # Activate virtualenv and open-up BERT notebook
 pipenv shell
