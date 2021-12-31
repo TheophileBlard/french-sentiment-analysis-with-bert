@@ -132,9 +132,9 @@ The dataset is also [available in 🤗Datasets](https://huggingface.co/datasets/
 To download it and start training your own model, simply use:
 
 ```python
-import datasets
+from datasets import load_dataset
 
-train_ds, val_ds, test_ds = datasets.load_dataset(
+train_ds, val_ds, test_ds = load_dataset(
     'allocine', 
     split=['train', 'validation', 'test']
 )
